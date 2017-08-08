@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>引言 &mdash; Mathematics for Machine Learning 1.0 alpha documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Mathematics for Machine Learning 1.0 alpha documentation" href="index.html"/>
+        <link rel="next" title="机器学习之概率统计基础" href="Matrix_Theory_docs.html"/>
+        <link rel="prev" title="Mathematics for Machine Learning" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Mathematics for Machine Learning
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">机器学习之概率统计基础</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">引言</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">究竟什么是机器学习？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vs">概率 vs. 统计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">概率统计基础的重要性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">参考书推荐</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#id5">概率</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id6">一、概率公理及推论（基石）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">概率</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">样本空间和事件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribute">Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">机器学习之矩阵论</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Matrix_Theory_docs.html">机器学习之概率统计基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matrix_Theory_docs.html#id10">机器学习之矩阵论</a></li>
+</ul>
+<p class="caption"><span class="caption-text">机器学习之凸优化</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Convex_Optimization_Theory_docs.html">机器学习之概率统计基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Convex_Optimization_Theory_docs.html#id10">机器学习之矩阵论</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Mathematics for Machine Learning</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>引言</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Probability_and_Statistical_Inference_docs.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>引言<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>究竟什么是机器学习？<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">A branch of artificial intelligence, concerns the construction and study of systems that can learn from data.  (<a class="reference external" href="https://en.wikipedia.org/wiki/Machine_learning">REF</a>)</div>
+</div>
+<div class="line-block">
+<div class="line">机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="vs">
+<h2>概率 vs. 统计<a class="headerlink" href="#vs" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">概率：研究随机事件出现的可能性的数学分支，描述非确定性（Uncertainty）的正式语言，是统计推断的基础</p>
+<blockquote>
+<div><ul class="simple">
+<li>概率：一个事件或事件集合出现的可能性</li>
+<li><strong>基本问题：给定以一个数据产生过程，则输出的性质是什么。</strong></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">统计推断：处理数据分析和概率理论的数学分支，与数据挖掘和机器学习是近亲</p>
+<blockquote>
+<div><ul class="simple">
+<li>统计量：一个用以描述样本或总体性质的数值，如均值或方差</li>
+<li><strong>基本问题：给定输出数据，我们可以得到该数据的产生过程的哪些信息（相当于是“概率”的一个逆过程）</strong></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<img alt="_images/WechatIMG6.png" class="align-center" src="_images/WechatIMG6.png" />
+</div>
+<div class="section" id="id3">
+<h2>概率统计基础的重要性<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">研究数据分析必须大好概率和统计基础</p>
+<blockquote>
+<div><ul class="simple">
+<li>Using fancy tools like neural nets, boosting and support vector machines without understanding basic statistics like <strong>doing brain surgery before knowing how to use a band-aid.</strong></li>
+<li>做脑外科手术，却不知道怎么使用绷带！</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>参考书推荐<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Kevin P. Murphy, <strong>Machine Learning: A Probabilistic Perspective</strong>, MIT Press, 2012</dt>
+<dd><ul class="first last">
+<li>统计部分涵盖Larry了的内容，本笔记所用的符号体系来自此书。</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Larry Wasserman, <strong>All of Statistics: A Concise Course in Statistical Inference</strong></dt>
+<dd><ul class="first last">
+<li>中译本：《<strong>统计学完全教程</strong>》</li>
+<li>内容很全，但有些部分篇幅略少，更偏向于从统计的角度讲述，为计算机系所写</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>盛聚／谢式千／潘承毅，<strong>概率论与数理统计</strong>，高等教育出版社</dt>
+<dd><ul class="first last">
+<li>浙大的这本很不错，国产书算是不错的。</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id5">
+<h1>概率<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id6">
+<h2>一、概率公理及推论（基石）<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>概率<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>频率学派</strong>：多次重复试验（多次抛掷硬币），则我们期望正面向上的次数占总实验次数的一半。</li>
+<li><dl class="first docutils">
+<dt><strong>Bayesian 学派</strong>：我们相信下一次试验中，硬币正面向上的可能性为0.5.</dt>
+<dd><ul class="first last">
+<li>概率是我们对事情不确定性的定量描述，与信息有关，而非重复实验。</li>
+<li>可以用来对不能重复实验的时间的不确定，如明天天晴的概率为0.8，如某邮件是垃圾邮件的概率。</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>样本空间和事件<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+<p>Install $project by running:</p>
+<div class="math" id="equation-euler">
+<span class="eqno">(1)</span>\[e^{i\pi} + 1 = 0\]</div>
+<p>Euler&#8217;s identity, equation <a href="#equation-euler">(1)</a>, was elected one of the most
+beautiful mathematical formulas.</p>
+<p>Since Pythagoras, we know that <span class="math">\(a^2 + b^2 = c^2\)</span>.</p>
+<div class="math">
+<span class="eqno">(2)</span>\[ \begin{align}\begin{aligned}(a + b)^2 = a^2 + 2ab + b^2\\(a - b)^2 = a^2 - 2ab + b^2\end{aligned}\end{align} \]</div>
+<p>way2</p>
+<blockquote>
+<div><div class="math">
+<span class="eqno">(3)</span>\[\begin{split}(a + b)^2  &amp;=  (a + b)(a + b) \\
+           &amp;=  a^2 + 2ab + b^2\end{split}\]</div>
+</div></blockquote>
+<p>way3</p>
+<blockquote>
+<div><div class="math">
+<span class="eqno">(4)</span>\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
+</div></blockquote>
+<p>Look how easy it is to use $a_a$:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>import project</dt>
+<dd><div class="first last math">
+<span class="eqno">(5)</span>\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
+</dd>
+</dl>
+<p># Get your stuff done
+project.do_stuff()</p>
+</div></blockquote>
+<div class="math">
+\begin{eqnarray}
+   y    &amp; = &amp; ax^2 + bx + c \\
+   f(x) &amp; = &amp; x^2 + 2xy + y^2
+\end{eqnarray}</div></div>
+<div class="section" id="contribute">
+<h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Issue Tracker: <a class="reference external" href="https://github.com/iphysresearch/Math_ML/issues">https://github.com/iphysresearch/Math_ML/issues</a></li>
+<li>Source Code: <a class="reference external" href="https://github.com/iphysresearch/Math_ML">https://github.com/iphysresearch/Math_ML</a></li>
+</ul>
+</div>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<p>If you are having issues, please let us know.
+We have a mailing list located at: <a class="reference external" href="mailto:hewang&#37;&#52;&#48;mail&#46;bnu&#46;edu&#46;cn">hewang<span>&#64;</span>mail<span>&#46;</span>bnu<span>&#46;</span>edu<span>&#46;</span>cn</a></p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>The project is licensed under the MIT license.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Matrix_Theory_docs.html" class="btn btn-neutral float-right" title="机器学习之概率统计基础" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Mathematics for Machine Learning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Herb.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0 alpha',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: ''
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
