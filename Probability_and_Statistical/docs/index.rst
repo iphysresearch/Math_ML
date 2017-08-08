@@ -42,7 +42,7 @@
   	* **基本问题：给定输出数据，我们可以得到该数据的产生过程的哪些信息（相当于是“概率”的一个逆过程）**
 
 
-.. image:: ./images/WechatIMG6.png
+.. image:: /images/WechatIMG6.png
 	:align: center
 
 
