@@ -36,7 +36,7 @@ extensions = [
 #    'sphinx.ext.imgmath',
 ]
 # Set this option to True if you want all displayed math to be numbered. The default is False.
-math_number_all = True
+math_number_all = False
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

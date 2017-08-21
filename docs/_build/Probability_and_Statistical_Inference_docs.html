@@ -100,9 +100,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#id6">一、概率公理及推论（基石）</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id7">概率</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id8">样本空间和事件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">概率公理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">联合概率 &amp; 条件概率</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">贝叶斯公式</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pmf-pdfcdf">二、随机变量及其分布：pmf／pdf、CDF、均值、方差</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#indices-and-tables">Indices and tables</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#contribute">Contribute</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#support">Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
@@ -222,10 +228,12 @@
 <li><p class="first">研究数据分析必须大好概率和统计基础</p>
 <blockquote>
 <div><ul class="simple">
-<li>Using fancy tools like neural nets, boosting and support vector machines without understanding basic statistics like <strong>doing brain surgery before knowing how to use a band-aid.</strong></li>
-<li>做脑外科手术，却不知道怎么使用绷带！</li>
+<li>Using fancy tools like neural nets, boosting and support vector machines without understanding basic statistics like doing brain surgery before knowing how to use a band-aid.</li>
 </ul>
 </div></blockquote>
+<ul class="simple">
+<li>做脑外科手术，却不知道怎么使用绷带！</li>
+</ul>
 </li>
 </ul>
 </div>
@@ -281,10 +289,134 @@
 </div>
 <div class="section" id="id8">
 <h3>样本空间和事件<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>将某个事先不知道输出的试验的所有可能结果组成的集合称为该试验的 <strong>样本空间</strong>。</li>
+<li>某试验的样本空间的子集为试验的 <strong>随机事件</strong>。</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>概率公理<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>对某随机试验的每个事件 A，赋予一个实数 <span class="math">\(\mathbb{P}(A)\)</span>，称为 A 的概率，如果集合函数 <span class="math">\(P(\cdot)\)</span> 满足下列条件：<ul>
+<li><strong>非负性</strong>：对于每一个事件 <span class="math">\(A\)</span>，有 <span class="math">\(\mathbb{P}(A)\ge0\)</span></li>
+<li><strong>规范性</strong>：对于必然事件 <span class="math">\(S\)</span>  （样本空间），有   <span class="math">\(\mathbb{P}(S)=1\)</span></li>
+<li><strong>可列可加性</strong>：对两两不相交（互斥）事件 <span class="math">\(A_i\)</span>，即对于 <span class="math">\(A_iA_j\neq\emptyset,i\neq j,i,j=1,2,\dots\)</span>，有</li>
+</ul>
+</li>
+</ul>
+<div class="math">
+\[\mathbb{P}\Big(\bigcup^\infty_{i=1}A_i\Big)=\sum^\infty_{i=1}\mathbb{P}(A_i)\]</div>
+<p>从上述三个公理，可推导出概率的所有的其他性质。</p>
+<ul>
+<li><p class="first">推论：</p>
+<ul>
+<li><p class="first">不可满足命题的概率为0</p>
+<div class="math">
+\[\begin{split}\mathbb{P}(\emptyset)=0 \\ \mathbb{P}(A\cap\bar{A)}=0\end{split}\]</div>
+</li>
+<li><p class="first">对任意两个事件 A 和 B</p>
+<div class="math">
+\[\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)\]</div>
+</li>
+<li><p class="first">事件 A 的补事件</p>
+<div class="math">
+\[\mathbb{P}(\bar{A})=1-\mathbb{P}(A)\]</div>
+</li>
+<li><p class="first">对任意事件 A</p>
+<div class="math">
+\[0 \geq \mathbb{P}(A) \geq 1\]</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>联合概率 &amp; 条件概率<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><strong>联合概率</strong> 表示两个事件共同发生的概率。A 与 B 的联合概率表示为 <span class="math">\(\mathbb{P}(A,B)\)</span> 或者 <span class="math">\(\mathbb{P}(A\cap B)\)</span>。对任意两个事件 A 和 B，</p>
+<div class="math">
+\[\mathbb{P}(A,B)=\mathbb{P}(A\cap B)=\mathbb{P}(A|B)\mathbb{P}(B)\]</div>
+<p>该公式定义下的两种极端情形会反映出性质： <a class="reference internal" href="#id15" id="id11">[统计独立性]</a> 和 <a class="reference internal" href="#id16" id="id12">[互斥性]</a> 。</p>
+</li>
+<li><p class="first"><strong>条件概率</strong> 是指事件A在另外一个事件B已经发生条件下的发生概率。条件概率表示为：<span class="math">\(\mathbb{P}(A|B)\)</span>，读作“在B条件下A的概率”。当 <span class="math">\(\mathbb{P}(B)&gt;0\)</span> 时，给定 B 时 A 的条件概率为</p>
+<div class="math">
+\[\mathbb{P}(A|B)=\frac{\mathbb{P}(A,B)}{\mathbb{P}(B)}\Rightarrow\mathbb{P}(A,B)=\mathbb{P}(A|B)\mathbb{P}(B)\]</div>
+<p>所谓 <strong>积规则(Product Rule)</strong>。有穷多个事件的积事件情况：</p>
+<p>设 <span class="math">\(A_1,A_2,…,A_n\)</span> 为任意 n 个事件 <span class="math">\(（n\ge2）\)</span> 且 <span class="math">\(\mathbb{P}(A_1,A_2,…,A_n)&gt;0\)</span>，则</p>
+<div class="math">
+\[\mathbb{P}(A_1,A_2,\cdots,A_n)=\mathbb{P}(A_1)\mathbb{P}(A_2|A_1)\cdots\mathbb{P}(A_n|A_1A_2\cdots A_{n-1})\]</div>
+</li>
+<li><p class="first">给定任意 B，若 <span class="math">\(\mathbb{P}(B)&gt;0\)</span>，则 &nbsp;<span class="math">\(\mathbb{P}(\cdot|B)\)</span> 也是一个概率，即满足概率的三个概率公理。</p>
+<div class="math">
+\[\begin{split}\mathbb{P}(A|B)\geqslant0 \,\,\text{非负性}\\
+\mathbb{P}(\Omega|B) = 1\,\,\,\,\text{规范性}\\
+\mathbb{P}\Big(\bigcup^\infty_{i=1}A_i|B\Big)=\sum^\infty_{i=1}\mathbb{P}\big(A_i|B\big)\,\,\,\,\text{可列可加性}\end{split}\]</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h3>贝叶斯公式<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">设 <span class="math">\(B_1,B_2,…,B_n\)</span> 是一组事件，若</p>
+<ol class="arabic">
+<li><p class="first"><span class="math">\(i\neq j\in\{1,2,…,n\},B_iB_j=\emptyset\)</span></p>
+</li>
+<li><p class="first"><span class="math">\(B_1\cup B_2\cup…\cup B_n=\Omega\)</span></p>
+<p>则称 <span class="math">\(B_1,B_2,…,B_n\)</span> 样本空间 <span class="math">\(\Omega\)</span> 的一个 <strong>划分</strong> ，或称为样本空间 <span class="math">\(\Omega\)</span> 的一个 <strong>完备事件组</strong> 。</p>
+</li>
+</ol>
+</li>
+<li><p class="first">全概率公式：令 <span class="math">\(A_1,…,A_K\)</span> 为 A 的一个划分，则对任意事件 B，有</p>
+<div class="math">
+\[\mathbb{P}(B)=\sum_j\mathbb{P}(B|A_j)\mathbb{P}(A_j)\]</div>
+</li>
+<li><p class="first">贝叶斯公式：令 <span class="math">\(A_1,…,A_k\)</span> 为 A 的一个划分且对每个 <span class="math">\(k,k=1,2,…,K\)</span> 。若 <span class="math">\(\mathbb{P}(B)&gt;0\)</span>，则对每个 <span class="math">\(\mathbb{P}(A_k)&gt;0\)</span> 有（ <a class="reference external" href="https://en.wikipedia.org/wiki/Bayes%27_theorem#Derivation">由条件概率推导贝叶斯公式</a> ）</p>
+<div class="math">
+\[\mathbb{P}(A_k|B)=\frac{\mathbb{P}(B,A_k)}{\mathbb{P}(B)}=\frac{\mathbb{P}(B|A_k)\mathbb{P}(A_k)}{\sum_j\mathbb{P}(B|A_j)\mathbb{P}(A_j)}\]</div>
+<p>注：上述公式中，分子分母形式相同，分母为所有划分之和。</p>
+<p>注： <strong>先验概率</strong> <span class="math">\(\mathbb{P}(A_k)\)</span> 是事情还没有发生，要求这件事情发生的可能性的大小。它往往作为“由因求果”问题中的“因”出现； <strong>后验概率</strong> <span class="math">\(\mathbb{P}(A_k|B)\)</span> 是事情已经发生，要求这件事情发生的原因是由某个因素引起的可能性的大小。是“执果寻因”问题中的“因”。后验概率的计算要以先验概率为基础。</p>
+</li>
+<li><p class="first">例：贝叶斯公式应用：</p>
+<ul>
+<li><p class="first">已知Macintosh用户、Windows用户和Linux用户感染病毒的概率（先验概率）分别是0.65、0.82和0.5。用户使用Macintosh、Windows和Linux操作系统的比例分别为0.3、0.5和0.2。问现在发现用户感染了病毒，则该用户为Windows用户的概率（后验概率）是多少？</p>
+</li>
+<li><p class="first">解：令 B 表示被病毒感染这一随机事件，</p>
+<blockquote>
+<div><p><span class="math">\(A_1\)</span> 表示Macintosh用户，则 <span class="math">\(\mathbb{P}(A_1)=0.3,\mathbb{P}(B|A_1)=0.65\)</span></p>
+<p><span class="math">\(A_2\)</span> 表示Windows用户，则 <span class="math">\(\mathbb{P}(A_2)=0.5, \mathbb{P}(B|A_2)=0.82\)</span></p>
+<p><span class="math">\(A_3\)</span> 表示Linux用户，则 <span class="math">\(\mathbb{P}(A_3)=0.2,\mathbb{P}(B|A_3)=0.5\)</span></p>
+<p>因为 <span class="math">\(\mathbb{P}(A_1)+\mathbb{P}(A_2)+\mathbb{P}(A_3)=1\)</span> ，所以 <span class="math">\(A_1、A_2\)</span> 和 <span class="math">\(A_3\)</span> 组成一个完备事件组。</p>
+<p>所以根据贝叶斯公式，</p>
+<div class="math">
+\[\mathbb{P}(A_2|B)=\frac{\mathbb{P}(B,A_2)}{\mathbb{P}(B)}=\frac{\mathbb{P}(B|A_2)\mathbb{P}(A_2)}{\sum_i\mathbb{P}(B|A_i)\mathbb{P}(A_i)}=\frac{0.82\times0.5}{0.65\times0.3+0.82\times0.5+0.5\times0.2}=0.58\]</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">作业题：</p>
+<p>假设在考试的多项选择中，考生知道正确答案的概率为 p，猜测答案的概率为 1-p，并且假设考生知道正确答案答对题的概率为1，猜中正确答案的概率为 1/m，其中m为多选项的数目。那么已知考生答对题目，求他知道正确答案的概率。</p>
+<ul>
+<li><p class="first">解：令 B 表示某一考生答对题目这一随机事件，</p>
+<blockquote>
+<div><p><span class="math">\(A_1\)</span> 表示知道正确答案的学生，则 <span class="math">\(\mathbb{P}(A_1)=p,\mathbb{P}(B|A_1)=1\)</span></p>
+<p><span class="math">\(A_2\)</span> 表示猜答案的学生，则 <span class="math">\(\mathbb{P}(A_2)=1-p,\mathbb{P}(B|A_2)=1/m\)</span></p>
+<p>因为 <span class="math">\(\mathbb{P}(A_1)+\mathbb{P}(A_2)=1\)</span> ，所以 <span class="math">\(A_1\)</span> 和 <span class="math">\(A_2\)</span> 组成一个完备事件组。</p>
+<p>所以根据贝叶斯公式，</p>
+<div class="math">
+\[\mathbb{P}(A_1|B)=\frac{\mathbb{P}(B,A_1)}{\mathbb{P}(B)}=\frac{\mathbb{P}(B|A_1)\mathbb{P}(A_1)}{\sum_i\mathbb{P}(B|A_i)\mathbb{P}(A_i)}=\frac{1\times p}{1\times p+(1-p)\times 1/m}=\frac{mp}{(m-1)p+1}\]</div>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="pmf-pdfcdf">
+<h2>二、随机变量及其分布：pmf／pdf、CDF、均值、方差<a class="headerlink" href="#pmf-pdfcdf" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 <div class="section" id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
 <li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
@@ -297,24 +429,24 @@
 beautiful mathematical formulas.</p>
 <p>Since Pythagoras, we know that <span class="math">\(a^2 + b^2 = c^2\)</span>.</p>
 <div class="math">
-<span class="eqno">(2)</span>\[ \begin{align}\begin{aligned}(a + b)^2 = a^2 + 2ab + b^2\\(a - b)^2 = a^2 - 2ab + b^2\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}(a + b)^2 = a^2 + 2ab + b^2\\(a - b)^2 = a^2 - 2ab + b^2\end{aligned}\end{align} \]</div>
 <p>way2</p>
 <blockquote>
 <div><div class="math">
-<span class="eqno">(3)</span>\[\begin{split}(a + b)^2  &amp;=  (a + b)(a + b) \\
+\[\begin{split}(a + b)^2  &amp;=  (a + b)(a + b) \\
            &amp;=  a^2 + 2ab + b^2\end{split}\]</div>
 </div></blockquote>
 <p>way3</p>
 <blockquote>
 <div><div class="math">
-<span class="eqno">(4)</span>\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
+\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
 </div></blockquote>
 <p>Look how easy it is to use $a_a$:</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>import project</dt>
 <dd><div class="first last math">
-<span class="eqno">(5)</span>\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
+\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
 </dd>
 </dl>
 <p># Get your stuff done
@@ -324,8 +456,7 @@ project.do_stuff()</p>
 \begin{eqnarray}
    y    &amp; = &amp; ax^2 + bx + c \\
    f(x) &amp; = &amp; x^2 + 2xy + y^2
-\end{eqnarray}</div></div>
-<div class="section" id="contribute">
+\end{eqnarray}</div><div class="section" id="contribute">
 <h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Issue Tracker: <a class="reference external" href="https://github.com/iphysresearch/Math_ML/issues">https://github.com/iphysresearch/Math_ML/issues</a></li>
@@ -340,6 +471,19 @@ We have a mailing list located at: <a class="reference external" href="mailto:he
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p>The project is licensed under the MIT license.</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils citation" frame="void" id="id15" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[统计独立性]</a></td><td>当且仅当两个随机事件 A 与 B 满足 <span class="math">\(\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)\)</span> 时，事件 A 与 B 才是统计独立的。同样，对于两个独立事件 A 与 B 有 <span class="math">\(\mathbb{P}(A|B)=\mathbb{P}(A)\)</span> 以及 <span class="math">\(\mathbb{P}(B|A)=\mathbb{P}(B)\)</span>。</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id12">[互斥性]</a></td><td>当且仅当两个随机事件 A 与 B 满足 <span class="math">\(\mathbb{P}(A|B)=0\)</span> 且 <span class="math">\(\mathbb{P}(A)\neq0,\mathbb{P}(B)\neq0\)</span> 时，事件 A 与 B 是互斥的。因此，对于两个独立事件 A 与 B 有 <span class="math">\(\mathbb{P}(A|B)=0\)</span> 以及 <span class="math">\(\mathbb{P}(B|A)=0\)</span>。</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 

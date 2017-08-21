@@ -32,7 +32,8 @@
   
 
   
-    <link rel="top" title="Mathematics for Machine Learning 1.0 alpha documentation" href="index.html"/> 
+    <link rel="top" title="Mathematics for Machine Learning 1.0 alpha documentation" href="index.html"/>
+        <link rel="prev" title="机器学习之概率统计基础" href="Matrix_Theory_docs.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -85,35 +86,46 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">机器学习之概率统计基础</a><ul>
-<li><a class="reference internal" href="#id2">引言</a><ul>
-<li><a class="reference internal" href="#id3">究竟什么是机器学习？</a></li>
-<li><a class="reference internal" href="#vs">概率 vs. 统计</a></li>
-<li><a class="reference internal" href="#id4">概率统计基础的重要性</a></li>
-<li><a class="reference internal" href="#id5">参考书推荐</a></li>
+              <p class="caption"><span class="caption-text">机器学习之概率统计基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Probability_and_Statistical_Inference_docs.html">引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Probability_and_Statistical_Inference_docs.html#id5">概率</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Probability_and_Statistical_Inference_docs.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+<p class="caption"><span class="caption-text">机器学习之矩阵论</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Matrix_Theory_docs.html">机器学习之概率统计基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matrix_Theory_docs.html#id10">机器学习之矩阵论</a></li>
+</ul>
+<p class="caption"><span class="caption-text">机器学习之凸优化</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">机器学习之概率统计基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">引言</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">究竟什么是机器学习？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vs">概率 vs. 统计</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">概率统计基础的重要性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">参考书推荐</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id6">概率</a><ul>
-<li><a class="reference internal" href="#id7">一、概率公理及推论（基石）</a><ul>
-<li><a class="reference internal" href="#id8">概率</a></li>
-<li><a class="reference internal" href="#id9">样本空间和事件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">概率</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">一、概率公理及推论（基石）</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">概率</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">样本空间和事件</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id10">机器学习之矩阵论</a><ul>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-<li><a class="reference internal" href="#contribute">Contribute</a></li>
-<li><a class="reference internal" href="#support">Support</a></li>
-<li><a class="reference internal" href="#license">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id10">机器学习之矩阵论</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribute">Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#support">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#license">License</a></li>
 </ul>
 </li>
 </ul>
-</div>
+
             
           
         </div>
@@ -301,24 +313,24 @@
 beautiful mathematical formulas.</p>
 <p>Since Pythagoras, we know that <span class="math">\(a^2 + b^2 = c^2\)</span>.</p>
 <div class="math">
-<span class="eqno">(2)</span>\[ \begin{align}\begin{aligned}(a + b)^2 = a^2 + 2ab + b^2\\(a - b)^2 = a^2 - 2ab + b^2\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}(a + b)^2 = a^2 + 2ab + b^2\\(a - b)^2 = a^2 - 2ab + b^2\end{aligned}\end{align} \]</div>
 <p>way2</p>
 <blockquote>
 <div><div class="math">
-<span class="eqno">(3)</span>\[\begin{split}(a + b)^2  &amp;=  (a + b)(a + b) \\
+\[\begin{split}(a + b)^2  &amp;=  (a + b)(a + b) \\
            &amp;=  a^2 + 2ab + b^2\end{split}\]</div>
 </div></blockquote>
 <p>way3</p>
 <blockquote>
 <div><div class="math">
-<span class="eqno">(4)</span>\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
+\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
 </div></blockquote>
 <p>Look how easy it is to use $a_a$:</p>
 <blockquote>
 <div><dl class="docutils">
 <dt>import project</dt>
 <dd><div class="first last math">
-<span class="eqno">(5)</span>\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
+\[(a + b)^2 = a^2 + 2ab + b^2\]</div>
 </dd>
 </dl>
 <p># Get your stuff done
@@ -354,6 +366,13 @@ We have a mailing list located at: <a class="reference external" href="mailto:he
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="Matrix_Theory_docs.html" class="btn btn-neutral" title="机器学习之概率统计基础" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
